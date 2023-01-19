@@ -31,6 +31,6 @@ To Start Server:
 
 `npm start`  
 
-To Visit App:
+To Visit App: MUSIC
 
 `localhost:3000`  
