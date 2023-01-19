@@ -6,7 +6,8 @@ def dockerImage = ''
 node {
     def sonarScanner = tool name: 'forSonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     stage('Cloning Git') {
-        git(url: 'https://github.com/SheethalBangera/simple-bank-system.git', branch: 'master')
+        checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'GithubCred', url: 'https://github.com/SheethalBangera/simple-bank-system.git']])
+        
     }
     stage('Build Project') {
         sh "npm install"
