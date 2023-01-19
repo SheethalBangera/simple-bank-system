@@ -1,24 +1,34 @@
-{
-  "name": "simple-bank-system",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js",
-    "test": "mocha --recursive --exit"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "dotenv": "^10.0.0",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "mongoose": "^5.13.2",
-    "nodemon": "^2.0.9"
-  },
-  "devDependencies": {
-    "mocha": "^10.2.0"
-  }
-}
+// Requiring module
+const assert = require('assert');
+// We can group similar tests inside a describe block
+describe("Basic Test Validation", () => {
+before(() => {
+    console.log( "Proceeding with executing complete Test Suit !!!" );
+});
+after(() => {
+    console.log( "All Test Cases executed !!!" );
+});
+// We can add nested blocks for different tests
+describe( "Test1", () => {
+    beforeEach(() => {
+    console.log( "executes before every test" );
+    });
+    it("Is returning 5 when adding 2 + 3", () => {
+    assert.equal(2 + 3, 5);
+    });
+    it("Is returning 6 when multiplying 2 * 3", () => {
+    assert.equal(2*3, 6);
+    });
+});
+describe("Test2", () => {
+    beforeEach(() => {
+    console.log( "executes before every test" );
+    });
+    it("Is returning 4 when adding 2 +2", () => {
+    assert.equal(2 + 2, 4);
+    });
+    it("Is returning 8 when multiplying 2 * 4", () => {
+    assert.equal(2*4, 8);
+    });
+});
+});
