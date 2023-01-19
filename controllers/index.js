@@ -10,6 +10,8 @@ const authHandler = require('./auth/authHandler')
 router.use('/bank', accountHandler)
 router.use('/auth', authHandler)
 router.use('/', (_, res) => res.sendFile(__dirname + "/index.html"))
+router.use('/', (_, res) => res.sendFile(__dirname + "/style.css"))
+router.use('/', (_, res) => res.sendFile(__dirname + "/about.html"))
 router.use('*', (_, res) => res.status(404).json({msg: 'Não tem nada para você por aqui 👀'}))
 
 module.exports = router
